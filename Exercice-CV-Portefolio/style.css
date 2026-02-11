@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.5;
+  font-family: <link rel= "preconnect" href= "https://fonts.googleapis.com" >
+    <link rel= "preconnect" href= "https://fonts.gstatic.com" crossorigin> <link
+    href=
+    "https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Exo+2&display=swap"
+    rel= "stylesheet" >;
+  color: #ff71ce;
+  background-color: #ffffba;
+}
+header {
+  background-color: #ff71ce;
+  color: white;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+h1,
+p {
+  margin: 1rem;
+  padding: 1rem;
+}
+h1 {
+  font-size: 5rem;
+}
+p {
+  font-size: 2rem;
+  font-style: italic;
+}
+a {
+  color: #05ffa1;
+  text-align: center;
+  border: solid 0.1em blue;
+  width: 100%;
+}
+img {
+  margin: 1em;
+  align-items: right;
+  border-radius: 50%;
+  width: 60%;
+}
+h2 {
+  color: #ff71ce;
+  font-size: 2rem;
+}
+
+.Competences {
+  color: blue;
+  background-color: #05ffa1;
+  font-size: 1em;
+}
