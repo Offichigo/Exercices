@@ -1,4 +1,4 @@
-let number = 9;
+let number = -8;
 if (number > 0) {
   console.log("The number is positive");
 } else if (number < 0) {
