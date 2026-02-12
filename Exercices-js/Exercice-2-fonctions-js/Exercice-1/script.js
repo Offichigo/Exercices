@@ -5,8 +5,13 @@ function addition3Numbers() {
 addition3Numbers();
 
 function addition3NumbersWithArg(a, b, c) {
-  co;
+  const resultat = a + b + c;
+  console.log("Le résultat de la somme est " + resultat);
 }
-
-let resultat = addition3NumbersWithArg(a, b, c);
-console.log(resultat);
+const x = 5;
+const y = 6;
+const z = 8;
+addition3NumbersWithArg(x, y, z);
+addition3NumbersWithArg(1, 2, 3);
+addition3NumbersWithArg(1, 5, 6);
+addition3NumbersWithArg(36, 5, 12);
