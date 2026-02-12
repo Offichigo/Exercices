@@ -6,29 +6,43 @@
 html {
   scroll-behavior: smooth;
 }
-/* Variables CSS colors */
+
+/* Colors token */
 :root {
-  --yellowpastel-color: #feffbe;
-  --purplepastel-color: #bfb9ff;
-  --pinkpastel-color: #ffcfea;
+  --color-primary:#ffcfea;
+  --color-text: #feffbe;
+  --head-bg-color: #bfb9ff;
+  --color-bg-color: #d1b55f;
   --bluepastel-color: #afe9ff;
   --greenpastel-color: #cbffe6;
-  --yellowvap-bg-color: #eecd69;
-  --bluedarkvap-bg-color: #50d8ec;
+  --skills-bg-color: #50d8ec;
   --purpledark-bg-color: #dd6dfb;
-  --greendark-bg-color: #05ffa1;
+  --nav-bg-color: #05ffa1;
 }
-/* Style */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary:#ffcfea;
+    --color-text: #feffbe;
+    --head-bg-color: #a59fe2;
+    --color-bg-color: #1a160b;
+    --skills-bg-color: #449aa8;
+    --nav-bg-color: #00e18b;
+    --
+  }
+}
+
+/* Global style resets */
 body {
   line-height: 2;
   font-family: "Courier New", Courier, monospace, sans-serif;
-  background-color: var(--yellowpastel-color);
-  color: var(--bluedarkvap-color);
+  background-color: var(--color-bg-color);
 }
-/* En tête de la page  */
+
+/* Header styles */
 header {
-  background-color: var(--purpledark-bg-color);
-  color: var(--yellowpastel-color);
+  background-color: var(--head-bg-color);
+  color: var(--color-primary);
+  text-align: center;
 }
 nav,
 a,
@@ -36,38 +50,47 @@ img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--greendark-bg-color);
-  color: var(--yellowpastel-color);
+  background-color: var(--nav-bg-color);
+  color: var(--color-text);
   text-decoration: none;
-}
-
-nav {
-  border:
-    2px solid,
-    var(--purpledark-bg-color);
 }
 
 img {
   margin: 2em;
   align-items: right;
-  width: 50%;
+  width: 40%;
 }
-/* Cv */
+/* Main content styles*/
 
+.Skills,
+.Works,
+.Contact {
+  margin: 2rem;
+  padding: 3rem;
+  border-radius: 10px;
+}
 .Skills {
-  color: var(--yellowpastel-color);
-  background-color: var(--bluedarkvap-bg-color);
+  color: var(--color-text);
+  background-color: var(--skills-bg-color);
   font-size: 1em;
 }
 .Works {
   background-color: var(--purpledark-bg-color);
-  color: var(--yellowpastel-color);
+  color: var(--color-text);
 }
 .Contact {
-  color: var(--yellowpastel-color);
-  background-color: var(--greendark-bg-color);
+  color: var(--color-text);
+  background-color: var(--nav-bg-color);
 }
 /* Pied de page */
-footer img {
-  width: 10 rem;
+footer> .Contact { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+ footer img {
+width: 15%;
+flex-direction: column;
 }
+
