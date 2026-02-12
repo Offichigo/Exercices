@@ -6,55 +6,68 @@
 html {
   scroll-behavior: smooth;
 }
+/* Variables CSS colors */
+:root {
+  --yellowpastel-color: #feffbe;
+  --purplepastel-color: #bfb9ff;
+  --pinkpastel-color: #ffcfea;
+  --bluepastel-color: #afe9ff;
+  --greenpastel-color: #cbffe6;
+  --yellowvap-bg-color: #eecd69;
+  --bluedarkvap-bg-color: #50d8ec;
+  --purpledark-bg-color: #dd6dfb;
+  --greendark-bg-color: #05ffa1;
+}
+/* Style */
 body {
-  line-height: 1.5;
-  font-family: <link rel= "preconnect" href= "https://fonts.googleapis.com" >
-    <link rel= "preconnect" href= "https://fonts.gstatic.com" crossorigin> <link
-    href=
-    "https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Exo+2&display=swap"
-    rel= "stylesheet" >;
-  color: #ff71ce;
-  background-color: #ffffba;
+  line-height: 2;
+  font-family: "Courier New", Courier, monospace, sans-serif;
+  background-color: var(--yellowpastel-color);
+  color: var(--bluedarkvap-color);
 }
+/* En tête de la page  */
 header {
-  background-color: #ff71ce;
-  color: white;
+  background-color: var(--purpledark-bg-color);
+  color: var(--yellowpastel-color);
 }
-nav {
-  display: flex;
-  justify-content: space-around;
-}
-h1,
-p {
-  margin: 1rem;
-  padding: 1rem;
-}
-h1 {
-  font-size: 5rem;
-}
-p {
-  font-size: 2rem;
-  font-style: italic;
-}
-a {
-  color: #05ffa1;
-  text-align: center;
-  border: solid 0.1em blue;
-  width: 100%;
-}
+nav,
+a,
 img {
-  margin: 1em;
-  align-items: right;
-  border-radius: 50%;
-  width: 60%;
-}
-h2 {
-  color: #ff71ce;
-  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--greendark-bg-color);
+  color: var(--yellowpastel-color);
+  text-decoration: none;
 }
 
-.Competences {
-  color: blue;
-  background-color: #05ffa1;
+nav {
+  border:
+    2px solid,
+    var(--purpledark-bg-color);
+}
+
+img {
+  margin: 2em;
+  align-items: right;
+  width: 50%;
+}
+/* Cv */
+
+.Skills {
+  color: var(--yellowpastel-color);
+  background-color: var(--bluedarkvap-bg-color);
   font-size: 1em;
+}
+.Works {
+  background-color: var(--purpledark-bg-color);
+  color: var(--yellowpastel-color);
+}
+.Contact {
+  color: var(--yellowpastel-color);
+  background-color: var(--greendark-bg-color);
+}
+/* Pied de page */
+footer img {
+  width: 10 rem;
 }
