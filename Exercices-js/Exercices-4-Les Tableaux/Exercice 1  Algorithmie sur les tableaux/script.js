@@ -53,10 +53,42 @@ const books = [
     genre: "art",
     rating: 3.9,
   },
+  {
+    id: 7,
+    title: "Modern Painting",
+    author: "Emma Laurent",
+    year: 2020,
+    pages: 190,
+    genre: "horror",
+    rating: 3.9,
+  },
 ];
 
 function findBooksByAuthor(authorName) {
   return books.filter((book) => book.author === authorName);
 }
 
-console.log(findBooksByAuthor("Alice Martin"));
+// console.log(findBooksByAuthor("Alice Martin"))
+
+function calculateAveragePagesByGenre() {
+  const genreStats = {};
+
+  books.forEach((book) => {
+    if (!genreStats[book.genre]) {
+      genreStats[book.genre] = { totalPages: 0, count: 0 };
+      //   programming: { totalPages: 0, count: 0 }
+    }
+    genreStats[book.genre].totalPages += book.pages; // totalPages = totalPages + book.pages
+    genreStats[book.genre].count += 1;
+  });
+
+  const averages = {};
+  for (const genre in genreStats) {
+    averages[genre] = Math.round(
+      genreStats[genre].totalPages / genreStats[genre].count,
+    );
+  }
+  return averages;
+}
+
+console.log(calculateAveragePagesByGenre());
