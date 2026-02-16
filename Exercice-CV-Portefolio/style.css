@@ -9,27 +9,27 @@ html {
 
 /* Colors token */
 :root {
-  --color-primary:#ffcfea;
+  --color-primary: #ffcfea;
   --color-text: #feffbe;
   --head-bg-color: #bfb9ff;
   --color-bg-color: #d1b55f;
-  --bluepastel-color: #afe9ff;
-  --greenpastel-color: #cbffe6;
   --skills-bg-color: #50d8ec;
-  --purpledark-bg-color: #dd6dfb;
   --nav-bg-color: #05ffa1;
+  /* --bluepastel-color: #afe9ff; */
+  /* --greenpastel-color: #cbffe6;
+  --purpledark-bg-color: #dd6dfb; */
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary:#ffcfea;
+    --color-primary: #ffcfea;
     --color-text: #feffbe;
     --head-bg-color: #a59fe2;
     --color-bg-color: #1a160b;
     --skills-bg-color: #449aa8;
     --nav-bg-color: #00e18b;
-    --
   }
 }
+/* Responsives Screen */
 
 /* Global style resets */
 body {
@@ -55,11 +55,26 @@ img {
   text-decoration: none;
 }
 
+.pp {
+  display: none;
+}
 img {
-  margin: 2em;
-  align-items: right;
+  margin: 1em;
   width: 40%;
 }
+#switch {
+  background-color: var(--head-bg-color);
+  color: var(--color-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: large;
+}
+#switch:hover,
+#switch:focus {
+  background-color: var(--color-bg-color);
+}
+
 /* Main content styles*/
 
 .Skills,
@@ -75,7 +90,7 @@ img {
   font-size: 1em;
 }
 .Works {
-  background-color: var(--purpledark-bg-color);
+  background-color: var(--head-bg-color);
   color: var(--color-text);
 }
 .Contact {
@@ -83,14 +98,13 @@ img {
   background-color: var(--nav-bg-color);
 }
 /* Pied de page */
-footer> .Contact { 
+footer > .Contact {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
- }
- footer img {
-width: 15%;
-flex-direction: column;
 }
-
+footer img {
+  width: 15%;
+  flex-direction: column;
+}
