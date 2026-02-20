@@ -1,94 +1,91 @@
-const books = [
-  {
-    id: 1,
-    title: "JavaScript for Beginners",
-    author: "Alice Martin",
-    year: 2020,
-    pages: 300,
-    genre: "programming",
-    rating: 4.2,
-  },
-  {
-    id: 2,
-    title: "Advanced React",
-    author: "Bob Dupont",
-    year: 2021,
-    pages: 450,
-    genre: "programming",
-    rating: 4.5,
-  },
-  {
-    id: 3,
-    title: "Art History",
-    author: "Claire Leroy",
-    year: 2019,
-    pages: 280,
-    genre: "art",
-    rating: 3.8,
-  },
-  {
-    id: 4,
-    title: "Python Data Science",
-    author: "David Moreau",
-    year: 2022,
-    pages: 520,
-    genre: "programming",
-    rating: 4.7,
-  },
-  {
-    id: 5,
-    title: "Design Patterns",
-    author: "Alice Martin",
-    year: 2018,
-    pages: 320,
-    genre: "programming",
-    rating: 4.1,
-  },
-  {
-    id: 6,
-    title: "Modern Painting",
-    author: "Emma Laurent",
-    year: 2020,
-    pages: 190,
-    genre: "art",
-    rating: 3.9,
-  },
-  {
-    id: 7,
-    title: "Modern Painting",
-    author: "Emma Laurent",
-    year: 2020,
-    pages: 190,
-    genre: "horror",
-    rating: 3.9,
-  },
-];
+// Consignes : Implémentez les fonctions suivantes :
 
-function findBooksByAuthor(authorName) {
-  return books.filter((book) => book.author === authorName);
-}
+//     Calculer la moyenne de chaque étudiant·e
 
-// console.log(findBooksByAuthor("Alice Martin"))
+const students = {
+  A001: {
+    id: "A001",
+    name: "Alice Martin",
+    age: 22,
+    major: "Computer Science",
+    grades: [14, 16, 12, 18, 15],
+    absences: 3,
+    courses: ["JavaScript", "Algorithms", "Database"],
+  },
+  A002: {
+    id: "A002",
+    name: "Bob Dupont",
+    age: 24,
+    major: "Mathematics",
+    grades: [11, 9, 15, 8, 13],
+    absences: 7,
+    courses: ["Calculus", "Statistics", "Algebra"],
+  },
+  A003: {
+    id: "A003",
+    name: "Claire Leroy",
+    age: 21,
+    major: "Computer Science",
+    grades: [17, 19, 16, 18, 20],
+    absences: 1,
+    courses: ["JavaScript", "Web Development", "Data Structures"],
+  },
+  A004: {
+    id: "A004",
+    name: "David Moreau",
+    age: 23,
+    major: "Physics",
+    grades: [12, 14, 11, 10, 13],
+    absences: 5,
+    courses: ["Mechanics", "Quantum Physics", "Thermodynamics"],
+  },
+  A005: {
+    id: "A005",
+    name: "Emma Bernard",
+    age: 22,
+    major: "Computer Science",
+    grades: [15, 17, 16, 14, 19],
+    absences: 2,
+    courses: ["JavaScript", "Networks", "Security"],
+  },
+};
+//Extraire les moyenne de chaque étudiant
+//Faire une fonction qui calcule la moyenne d'un tableau
+//récupérer notes les additionner et le résultat les diviser en fonction du nombre de note mettre .length
+//renvoyer résultat des moyenne de chaque élève
 
-function calculateAveragePagesByGenre() {
-  const genreStats = {};
+const liststudent = Object.values(students);
 
-  books.forEach((book) => {
-    if (!genreStats[book.genre]) {
-      genreStats[book.genre] = { totalPages: 0, count: 0 };
-      //   programming: { totalPages: 0, count: 0 }
-    }
-    genreStats[book.genre].totalPages += book.pages; // totalPages = totalPages + book.pages
-    genreStats[book.genre].count += 1;
-  });
+liststudent.forEach((student) => {
+  console.log(student.grades);
+  calcAverage(student.grades);
+});
 
-  const averages = {};
-  for (const genre in genreStats) {
-    averages[genre] = Math.round(
-      genreStats[genre].totalPages / genreStats[genre].count,
-    );
+function calcAverage(gradesarray) {
+  let sum = 0;
+  const gradeslength = gradesarray.length;
+  for (let position = 0; position < gradeslength; position++) {
+    sum = sum + gradesarray[position];
   }
-  return averages;
+  console.log(sum / gradeslength);
 }
-
-console.log(calculateAveragePagesByGenre());
+//Trouver les étudiant·es d'une filière donnée
+//Filtrer les étudiants par major, extraire les étudiant et leur major
+function listStudentMajor(liststudent, namemajor) {
+  let studentComputerScience = [];
+  liststudent.forEach((student) => {
+    if (student.major === namemajor) {
+      studentComputerScience.push(student.name);
+    }
+  });
+  return studentComputerScience;
+}
+console.log(listStudentMajor(liststudent, "Computer Science"));
+// function studentFilter(studentmajor) {
+//   for (let position = 0; position < Object.values(students); position++) {
+//     if (studentmajor===) {
+//       console.log("oua");
+//     }
+//     Identifier l'étudiante avec la meilleure moyenne
+//     Statistiques par filière (moyenne des moyennes, taux d'absentéisme)
+//     Ajouter une nouvelle note à un étudiante

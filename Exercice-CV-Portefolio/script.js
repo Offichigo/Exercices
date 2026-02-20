@@ -3,10 +3,9 @@
 const ppnone = document.querySelector(".ppnone");
 //Récupérer l'img pp
 const pp = document.querySelector(".pp");
-//Récupérer button switch
-const button = document.querySelector("#switch");
+
 // On écoute le clique du bouton
-button.addEventListener("click", () => {
+ppnone.addEventListener("click", () => {
   ppnone.style.display = "none";
   pp.style.display = "block";
 });
@@ -19,3 +18,5 @@ button.addEventListener("click", () => {
 //       text.innerText = "Hello";
 //     });
 // });
+//Récupérer le button pour passer de sombre claire à l'infini
+// const button = document.querySelector("#switch");
