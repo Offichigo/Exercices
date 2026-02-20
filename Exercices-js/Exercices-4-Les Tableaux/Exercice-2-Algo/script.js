@@ -50,14 +50,10 @@ const students = {
   },
 };
 //Extraire les moyenne de chaque étudiant
-//Faire une fonction qui calcule la moyenne d'un tableau
-//récupérer notes les additionner et le résultat les diviser en fonction du nombre de note mettre .length
-//renvoyer résultat des moyenne de chaque élève
-
 const liststudent = Object.values(students);
 
 liststudent.forEach((student) => {
-  console.log(student.grades);
+  // console.log(student.grades);
   calcAverage(student.grades);
 });
 
@@ -67,25 +63,67 @@ function calcAverage(gradesarray) {
   for (let position = 0; position < gradeslength; position++) {
     sum = sum + gradesarray[position];
   }
-  console.log(sum / gradeslength);
+
+  return sum / gradeslength;
 }
 //Trouver les étudiant·es d'une filière donnée
-//Filtrer les étudiants par major, extraire les étudiant et leur major
 function listStudentMajor(liststudent, namemajor) {
   let studentComputerScience = [];
   liststudent.forEach((student) => {
     if (student.major === namemajor) {
-      studentComputerScience.push(student.name);
+      studentComputerScience.push(student);
     }
   });
   return studentComputerScience;
 }
-console.log(listStudentMajor(liststudent, "Computer Science"));
-// function studentFilter(studentmajor) {
-//   for (let position = 0; position < Object.values(students); position++) {
-//     if (studentmajor===) {
-//       console.log("oua");
-//     }
-//     Identifier l'étudiante avec la meilleure moyenne
+// console.log(listStudentMajor(liststudent, "Computer Science"));
+//Identifier l'étudiante avec la meilleure moyenne
+
+function findbestStudent(liststudent) {
+  let beststudent = "";
+  let bestAverage = 0;
+  liststudent.forEach((student) => {
+    const average = calcAverage(student.grades);
+    // console.log(average);
+    if (bestAverage < average) {
+      bestAverage = average;
+      beststudent = student.name;
+    }
+  });
+  return [beststudent, bestAverage];
+}
+findbestStudent(liststudent);
+// console.log(findbestStudent(liststudent));
 //     Statistiques par filière (moyenne des moyennes, taux d'absentéisme)
+
+function statisticsMajor(dataStudent) {
+  let listmajor = [];
+  let resultByMajor = [];
+  dataStudent.forEach((student) => {
+    if (!listmajor.includes(student.major)) {
+      listmajor.push(student.major);
+    }
+  });
+  listmajor.forEach((major) => {
+    const listStudentbyMajor = listStudentMajor(dataStudent, major);
+    let arrayAveragebyMajor = [];
+    let arrayAbsence = [];
+    listStudentbyMajor.forEach((student) => {
+      arrayAveragebyMajor.push(calcAverage(student.grades));
+
+      listStudentbyMajor.forEach((student) => {
+        arrayAbsence.push(student.absences);
+      });
+    });
+    resultByMajor.push([
+      major,
+      calcAverage(arrayAveragebyMajor),
+      calcAverage(arrayAbsence),
+    ]);
+  });
+  return resultByMajor;
+}
+console.log(statisticsMajor(liststudent));
 //     Ajouter une nouvelle note à un étudiante
+students.A002.grades.push(19);
+console.log(students.A002.grades);
