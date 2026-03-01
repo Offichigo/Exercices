@@ -9,21 +9,25 @@
 // Exemples :
 // createProfil("Marie", "Durand", 28)
 // → { lastname: "Marie", name: "Durand", age: 28, mail: "marie.durand@exemple.com" }
-// createProfil("Jean", "Martin", 35, "jm@perso.fr")
+
 // → { lastname: "Jean", name: "Martin", age: 35, mail: "jm@perso.fr" }
 // Critères de réussite :
 //     Retourne un objet avec 4 propriétés
 //     Génère l'email en minuscules si non fourni
 //     Gère les noms composés (remplace les espaces par des points)
 // Code starter :
-function createProfil(prenom, nom, age, mail) {
+function createProfil(prenom, nom, age, email) {
   let profil = {
-    lastName: "",
-    firstName: "",
-    age: 0,
-    mail: "",
+    firstName: prenom,
+    lastName: nom,
+    age: age,
+    mail: email,
   };
-
+  if (typeof profil.mail === "undefined") {
+    profil.mail = `${profil.firstName.toLowerCase()}.${profil.lastName.toLowerCase()}@exemple.com`;
+  }
   console.log(profil);
+  return profil;
 }
-createProfil();
+createProfil("Marie", "Durand", 28);
+createProfil("Jean", "Martin", 35, "jm@perso.fr");
