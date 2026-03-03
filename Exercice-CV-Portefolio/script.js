@@ -9,6 +9,8 @@ ppnone.addEventListener("click", () => {
   ppnone.style.display = "none";
   pp.style.display = "block";
 });
+
+
 //Ajout du style css display none sur ppnone
 
 // const logonav = document.querySelectorAll(".logonav");
