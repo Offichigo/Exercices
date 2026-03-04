@@ -1,3 +1,9 @@
+//classique
+//*Style spécial
+//? Question
+//todo surligné
+//! important/alerte
+
 const button = document.querySelector("button");
 const titre = document.querySelector("h1");
 const list = document.querySelector("li");
