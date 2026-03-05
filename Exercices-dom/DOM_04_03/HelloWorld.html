@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice JS DOM & Events</title>
+</head>
+
+<body>
+
+    <h1 id="main-title">Hello World</h1>
+
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="user-input" placeholder="Tapez votre texte ici...">
+        <div id="error-message"></div>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <button id="btn-1">Changer couleur fond</button>
+        <input type="checkbox" id="btn-toggle">
+        <label for="btn-toggle">Masquer Hello world</label>
+        <button id="btn-2">Modifier le titre</button>
+        <button id="btn-3">Ajouter à la liste</button>
+        <button id="btn-4">Alerte éléments visibles</button>
+        <button id="btn-delete-last">Supprimer le dernier</button>
+    </div>
+
+    <ul id="my-list">
+        <li><input type="checkbox" class="item-check"> Apprendre le DOM</li>
+        <li><input type="checkbox" class="item-check"> Maîtriser les évènements</li>
+    </ul>
+
+    <p>Nombre d'éléments : <span id="item-count-list">2</span></p>
+    <p>Nombre d'events: <span id="item-count-event">2</span></p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
