@@ -1,0 +1,36 @@
+h1,
+p {
+  color: hotpink;
+  text-align: center;
+  font-family: Comic Sans MS;
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  margin: 20px;
+}
+p {
+  margin: 40px;
+}
+body {
+  background-color: pink;
+  margin: auto;
+  color: hotpink;
+  text-align: center;
+  font-family: Comic Sans MS;
+}
+#liste {
+  color: hotpink;
+  text-align: center;
+  font-family: Comic Sans MS;
+  font-size: 15px;
+  margin: auto;
+}
+img {
+  display: block;
+  width: 30%;
+  margin: auto;
+  border-radius: 50%;
+  background-color: hotpink;
+  padding: 10px;
+}
