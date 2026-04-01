@@ -13,10 +13,6 @@ const cities = {
     lat: 48.8566,
     lon: 2.3522,
   },
-  Rennes: {
-    lat: 48.1173,
-    lon: -1.6778,
-  },
   Caen: {
     lat: 49.1829,
     lon: -0.3707,
@@ -24,6 +20,14 @@ const cities = {
   Marseille: {
     lat: 43.2965,
     lon: 5.3698,
+  },
+  Cherbourg: {
+    lat: 49.650002,
+    lon: -1.65,
+  },
+  Nancy: {
+    lat: 48.683331,
+    lon: 6.2,
   },
 };
 
@@ -41,7 +45,8 @@ function weatherEmoji(code) {
   if (code <= 77) return "🌨️";
   if (code <= 82) return "⛈️";
   return "🌩️";
-}
+} //switch case
+
 let renderOpenMeteo = async () => {
   Object.entries(cities).forEach(([name, details]) => {
     const bouton = document.getElementById(name.toLowerCase());
@@ -60,10 +65,11 @@ let renderOpenMeteo = async () => {
             month: "long",
           },
         );
-        li.innerText = `  ${weatherEmoji(data.daily.weathercode[index])} ${daily} : Température min : ${data.daily.temperature_2m_min[index]}°C, Température max : ${data.daily.temperature_2m_max[index]}°C `;
+        li.innerText = `${weatherEmoji(data.daily.weathercode[index])} ${daily} : Température min : ${data.daily.temperature_2m_min[index]}°C, Température max : ${data.daily.temperature_2m_max[index]}°C `;
       });
       dayWeather.innerText = `${weatherEmoji(currentCode)}Actuellement à ${name} il fait : ${currentWeather}°C`;
     });
+    document.getElementById("nantes").click();
   });
 };
 //récupérer les li de chaque jour météo

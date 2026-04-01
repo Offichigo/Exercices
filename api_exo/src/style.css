@@ -11,12 +11,14 @@
   --color-nantes-text: #5a3800;
   --color-paris: #ff6b6b;
   --color-paris-text: #fff;
-  --color-rennes: #ff8c42;
-  --color-rennes-text: #fff;
+  --color-nancy: #ff8c42;
+  --color-nancy-text: #fff;
   --color-caen: #ffdd57;
   --color-caen-text: #5a4200;
   --color-marseille: #f72585;
   --color-marseille-text: #fff;
+  --color-cherbourg: #faa302;
+  --color-cherbourg-text: #fff;
 
   --radius-pill: 999px;
   --radius-card: 16px;
@@ -88,9 +90,9 @@ nav button:active {
   background: var(--color-paris);
   color: var(--color-paris-text);
 }
-#rennes {
-  background: var(--color-rennes);
-  color: var(--color-rennes-text);
+#nancy {
+  background: var(--color-nancy);
+  color: var(--color-nancy-text);
 }
 #caen {
   background: var(--color-caen);
@@ -100,7 +102,10 @@ nav button:active {
   background: var(--color-marseille);
   color: var(--color-marseille-text);
 }
-
+#cherbourg {
+  background: var(--color-cherbourg);
+  color: var(--color-cherbourg-text);
+}
 .list {
   background: linear-gradient(135deg, #ffb800, #ff6b00);
   border-radius: var(--radius-card);
